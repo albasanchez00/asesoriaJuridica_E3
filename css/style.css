@@ -1,0 +1,659 @@
+/* INICIO ESTILOS GENERALES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--color-fondo-header-footer);
+}
+a:hover{
+    color: var(--color-primario);
+}
+
+:root{
+    --altura-header:10vh;
+    --color-primario: #5f6a72;
+    --color-secundario: #738a90;
+    --color-blanco: white;
+    --fondo-body: #f9f9f9;
+    --altura-footer:10vh;
+    --color-fondo-header-footer:#333333;
+    --color-primary-button: #738a90;
+    --color-secundary-button: #5f6a72;
+}
+
+/* Oculta la barra de scroll en Chrome, Safari y Edge */
+main::-webkit-scrollbar {
+    display: none;
+}
+
+/* Contenedor principal usando `flexbox` */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Mínimo 100% del alto de la pantalla */
+    max-width: 100vw;
+}
+/* `main` crece para ocupar todo el espacio restante */
+main {
+    flex: 1;
+    padding: 20px;
+    overflow: auto; /* Evita el desbordamiento */
+    background-color: var(--fondo-body);
+}
+ /* FIN ESTILOS GENERALES */ 
+/* INICIO HEADER */
+header{
+    min-height: var(--altura-header);
+    max-width: 100%;
+    background-color: var(--color-fondo-header-footer);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    .section_header{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        padding: 0 40px;
+        picture{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+            img{
+                width: 120px;
+                height: auto;
+            }
+        }
+    }
+    .section_nav{
+        width: 45%;
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            li{
+                padding: 0 20px;
+                a{
+                    color: var(--color-blanco);
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .section_user{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        padding: 0;
+        a{
+            color: var(--color-blanco);
+            font-size: 18px;
+            width: max-content;
+        }
+        picture {
+            width: 20%;
+            img{
+                width: 100px;
+                height: auto;
+            }
+        }
+    }
+}
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    background: var(--color-blanco);
+    height: 4px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    header{
+        height: var(--altura-header);
+        background-color: var(--color-fondo-header-footer);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        color: white;
+        .section_header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100vw;
+            padding: 0 40px;
+            picture img{
+                width: 80px;
+                height: auto;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .section_nav{
+                width: 20%;
+            }
+        }
+        .section_user{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 35%;
+            padding: 0 10px;
+            font-size: 15px;
+        }
+    }
+
+    .menu-toggle{
+        width: 20px;
+        height: 18px;
+        margin-left: 10px;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: absolute;
+        top: var(--altura_header);
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: var(--color_fondo);
+        opacity: 0.8;
+        
+        transition: height 0.3s ease-in-out;
+        background-color: var(--color-fondo-header-footer);
+    }
+
+    .nav-links.show {
+        display: flex;
+        height: 200px;
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        li{
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+/* FIN HEADER */
+
+/* INICIO PAGINAS */
+/* Inicio Página Login Usuario */
+.main-iSesion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+}
+.section_iSesion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    h1{
+        color: var(--color-primario);
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 800px;
+        height: 100%;
+        padding: 20px;
+        background-color: var(--color-blanco);
+        box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
+        -webkit-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
+        -moz-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
+        border-radius: 20px;
+        p{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            margin: 10px;
+            font-size: 20px;
+            input{
+                height: 45px;
+                width: 600px;
+                margin: 5px 0;
+                border-radius: 20px;
+                border: 0.5px solid var(--color-primary-button);
+                background-color: rgb(255, 255, 255);
+                font-size: 16px;
+                padding: 0 10px;
+            }
+            a{
+                color: var(--color-primary-button);
+            }
+            a:hover{
+                color: var(--color-secundary-button);
+            }
+        }
+        button {
+            cursor: pointer; 
+            border: 0px solid rgba(50, 199, 162, 0.35); 
+            font-size: 15px; 
+            color: var(--color-blanco); 
+            padding: 10px 30px;
+            width: 200px; 
+            border-radius: 50px; 
+            background: var(--color-primary-button);
+            a{
+                color: var(--color-blanco);
+            }
+            a:hover{
+                color: var(--color-blanco);
+            }
+        }
+        button:hover{   
+            width: 205px;
+            background: var(--color-secundary-button);
+            border: 1px solid var(--color-primary-button);
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .section_iSesion{
+        h1{
+            color: var(--color-primario);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        form{
+            max-width: 90%;
+            p{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 90%;
+                input{
+                    width: 90%;
+                }
+                a{
+                    text-align: center;
+                }
+            }
+        }
+    }
+    
+}
+/* Fin Página Login Usuario */
+
+/*Inicio Pagina Registro*/
+.section_main_registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    padding: 0 0;
+}
+.section_form_registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    padding: 10px 10px;
+    h1{
+        color: var(--color-primario);
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: var(--color_blanco);
+        border-radius: 30px;
+        box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
+        -webkit-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
+        -moz-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
+        width: 100%;
+        padding: 20px;
+        min-width: max-content;
+        .politicsUse{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            input{
+                cursor: pointer;
+                width: 35px;
+            }
+            strong{
+                color: var(--color-primary-button);
+                padding-left:5px;                
+            }
+            strong:hover{
+                color: var(--color-secundary-button);
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+        p{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            font-size: 15px;
+            input{
+                height: 30px;
+                width: 370px;
+                margin: 5px 0;
+                border-radius: 20px;
+                border: 0.5px solid var(--color-primary-button);
+                background-color: rgb(255, 255, 255);
+                font-size: 14px;
+                padding: 0 10px;
+            }
+            button {
+                cursor: pointer; 
+                border: 0px solid rgba(50, 199, 162, 0.35); 
+                font-size: 14px; 
+                color: rgb(255, 255, 255); 
+                padding: 10px 30px; 
+                width: 200px; 
+                border-radius: 50px; 
+                background: var(--color-primary-button);
+                a{
+                    color: var(--color-blanco);
+                }
+                
+            }
+            button:hover{   
+                width: 205px;
+                background: var(--color-secundary-button);
+                border: 1px solid var(--color-secundary-button);
+            }
+        }  
+        #politcs_privacy{
+            width: 15px;
+            margin: 10px;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .section_form_registro{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        picture{
+            width: 100%;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        h1{
+            color: var(--color-primario);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        form{
+            width: 90%;
+            min-width: max-content;
+            padding: 10px;
+            p{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 90%;
+                input{
+                    width: 90%;
+                }
+            }
+            .politicsUse{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                input{
+                    width: 15px;
+                    height: 15px;
+                }
+                strong{
+                    padding-left:5px;                
+                }
+            }
+        }
+    }
+    
+}
+/* Fin Página Registro Usuario */
+
+
+/* INICIO PAGINAS POLITICAS */
+  /* Contenedor principal */
+  #section-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    background-color: #ecf0f1;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+
+  
+/* Navegación, contenido y barra lateral */
+#nav-lateral {
+    position: sticky;
+    min-width: 15%;
+    height: 100%;
+    padding: 20px;
+    background-color: var(--fondo-body);
+    ul{
+        padding-left: 15px;
+        font-size: 14px;
+        li{
+            list-style:decimal;
+            margin: 15px 0;
+            color: #161616;
+        }
+    }
+}
+
+#main-politicas{
+    background-color: var(--color-blanco);
+}
+aside {
+    position: sticky;
+    min-width: 15%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--fondo-body);
+    order: 1;
+    ul{
+        padding-left: 15px;
+        font-size: 14px;
+        li{
+            list-style:decimal;
+            margin: 15px 0;
+            color: #161616;
+        }
+    }
+}
+
+#section-politicas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1{
+        margin: 20px 0 10px 0;
+        font-size: 30px;
+        color: #161616;
+    }
+    h2{
+        margin:20px 0 10px 0;
+        font-size: 24px;
+    }
+    p{
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    ul{
+        padding-left: 15px;
+        font-size: 14px;
+        li{
+            list-style:decimal;
+            margin: 10px 0;
+            color: #161616;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #nav-lateral {
+        display: none;
+    }
+    aside {
+        display: none;
+    }
+    #section-politicas{
+        padding: 20px;
+        h1{
+            font-size: 22px;
+        }
+        h2{
+            font-size: 18px;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    
+}
+
+/* FIN PAGINAS POLITICAS */
+
+
+
+/* INICIO FOOTER */
+footer{
+    min-height: var(--altura-footer);
+    max-width: 100%;
+    background-color: var(--color-fondo-header-footer);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    picture img{
+        width: 100px;
+        height: auto;
+    }
+    .section_footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        flex-wrap: nowrap;
+        li{
+            padding-bottom: 5px;
+            a{
+                color: var(--color-blanco);
+                font-size: 14px;
+            }
+        }
+    }
+}
+.section_nav_footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    footer{
+        flex-direction: column;
+        padding: 10px;
+        min-height: 25vh;
+        max-width: 100%;
+        section{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .section_footer{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: auto;
+            flex-wrap: nowrap;
+        }
+    }
+    
+}
+/* FIN FOOTER */

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Veredicta - Plataforma de Gestión Jurídica">
+    <meta name="description" content="Veredicta es una plataforma de gestión de documentos legales y jurídicos.">
+    <meta name="keywords" content="Veredicta, gestión de documentos, plataforma legal, servicios jurídicos">
+    <meta name="author" content="Veredicta Team">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Veredicta - Plataforma de Gestión Jurídica">
+    <meta property="og:description" content="Veredicta es una plataforma de gestión de documentos legales y jurídicos.">
+    <meta property="og:image" content="./assets/logo-veredicta.svg">
+    <title>Veredicta</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="./assets/favicon-veredicta.ico" type="image/ico">
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <section class="contenedor">
+        <header>
+            <section class="section_header">
+                <picture>
+                    <a href="./index.html"><img src="./assets/logo-veredicta.svg" alt="logotipo Veredicta"></a>
+                </picture>
+                <!-- Botón de menú hamburguesa -->
+                <section class="section_nav">
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="nav-cabecera">
+                        <ul class="nav-links" id="nav-links">
+                            <li><a href="./index.html" class="menu">Inicio</a></li>
+                            <li><a href="./politicas/politicas1.html" class="menu">Documentación</a></li>
+                            <li><a href="#" class="menu">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+        
+                <section class="section_user">
+                    <a href="./index.html">Inicio Sesión</a>
+                </section>
+            </section>
+        </header>
+
+        <main class="main-iSesion">
+            <section class="section_main_registro">
+                <section class="section_form_registro">
+                    <h1>Registro en Veredicta</h1>
+                    <form action="#" method="get" id="formulario_registro">
+                        <p>
+                            <label for="nombre">Nombre:<strong>*</strong></label>
+                            <input type="text" name="nombre" id="nombre" required>
+                        </p>
+                        <p>
+                            <label for="apellidos">Apellidos:</label>
+                            <input type="text" id="apellidos" name="apellidos">
+                        </p>
+                        <p>
+                            <label for="correo">Correo Electrónico:<strong>*</strong></label>
+                            <input type="email" name="correo" id="correo" required>
+                        </p>
+                        <p>
+                            <label for="movil">Teléfono:<strong>*</strong></label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </p>
+                        <p>
+                            <label for="psw">Contraseña:</label>
+                            <input type="password" id="password" name="psw">
+                        </p>
+                        <p>
+                            <label for="psw2">Repetir contraseña:</label>
+                            <input type="password" id="password-confirm" name="psw2">
+                        </p>
+                        <p class="politicsUse">
+                            <input type="checkbox" id="politcs_privacy" name="politcs">
+                            <label for="politcs">Aceptar los<a href="#"><strong>Terminos y Condiciones</a></strong></label>
+                        </p>
+                        <p>
+                            <button type="submit" id="btn-submit"><a href="./politicas/politicas1.html">Registrar</a></button>
+                        </p>
+                    </form>
+                </section>
+            </section>
+        </main>
+
+
+        <footer>
+            <section class="section_footer">
+                <picture>
+                    <a href="./index.html"><img src="./assets/logo-veredicta.svg" alt="logotipo Veredicta"></a>
+                </picture>
+                <section class="section_nav">
+                    <nav>
+                        <ul>
+                            <li><a href="./index.html">Inicio</a></li>
+                            <li><a href="./politicas/politicas1.html">Documentación</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="section_nav_politics">
+                    <nav>
+                        <ul>
+                            <li><a href="./politicas/politicas1.html">Terminos y condiciones</a></li>
+                            <li><a href="#">Políticas de uso</a></li>
+                            <li><a href="#">Politicas de cookies</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+        </footer>
+    </section>
+</body>
+</html>
